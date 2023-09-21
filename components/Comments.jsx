@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react'
 import moment from 'moment';
 import parse from 'html-react-parser';
 
-import { getComment } from '../services';
+import { getComments } from '../services';
 
 
 const Comments = ({ slug }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    getComment(slug)
+    getComments(slug)
       .then((result) => setComments(result))
 
   }, [])
